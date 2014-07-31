@@ -6,27 +6,52 @@
 	</head>
 	<body>
 		<h1>Better Forms.</h1>
-		<span id="intro">
+		<span class="intro">
 			<h2>Because user input should be pain-free, yay!</h2>
 			<p>
-				<br>
-				Forms should indicate strongly where users are currently typing in. This is important when users can be overwhelmed with too much information.<br>
-				<br>
-				Also, wouldn't it be nice that <em>instead of retyping passwords</em>, users can just push a button to see what did they typed exactly?<br>
+				User Happiness = Data Happiness
 			</p>
+		</span>
+		<h2>Sign Up Form</h2>
+		<span class="intro sub">
+			Forms should indicate strongly where users are currently typing in. This is important when users can be overwhelmed with too much information.<br>
+			<br>
+			Also, wouldn't it be nice that <em>instead of retyping passwords</em>, users can just push a button to see what did they typed exactly?<br>
 		</span>
 		<form>
 			<fieldset>
-				<label>Username</label>
+				<label>USERNAME</label>
 				<input type="text" name="username">
 			</fieldset>
 			<fieldset>
-				<label>Password</label>
+				<label>PASSWORD</label>
 				<span class="password_view" data-for="password1">Q</span>
 				<input type="password" name="password" class="password" id="password1">
 			</fieldset>
 			<fieldset>
 				<button type="submit">GET STARTED</button>
+			</fieldset>
+		</form>
+		<h2>Suggested Search Form</h2>
+		<span class="intro sub">
+			We can easily mimick a Google search input box with some clever AJAX requests and HTML '&lt;datalist&gt;' tags.
+			<br><br>[Work in Progress]
+		</span>
+		<form>
+			<fieldset>
+				<label>MY POKEMON</label>
+				<input type="text" name="book-choice" list="book-list">
+				<datalist id="book-list">
+					<option>bulbasaur</option>
+					<option>ivysaur</option>
+					<option>venusaur</option>
+					<option>charmander</option>
+					<option>charmeleon</option>
+					<option>charizard</option>
+					<option>squirtle</option>
+					<option>wartortle</option>
+					<option>blastoise</option>
+				</datalist>
 			</fieldset>
 		</form>
 		<script type="text/javascript" src="js/app.js"></script>

@@ -28,8 +28,7 @@ h1, h2 {
 form {
 	color: #666;
 	max-width: 480px;
-	margin: 0 auto;
-	min-height: 60%;
+	margin: 20px auto 100px;
 }
 
 input, select, textarea, button {
@@ -98,7 +97,7 @@ form input[type=submit], form button[type=submit], button.success, a.success {
 	font-size: 0.8em;
 	width: 480px;
 	color: #fff;
-	background: #177F5A;
+	background: #105469;
 	border-radius: 3px;
 }
 
@@ -107,6 +106,7 @@ form input[type=submit]:after, form button[type=submit]:after {
 }
 
 .password_view {
+	cursor: pointer;
 	display: inline-block;
 	margin-left: 10px;
 	float: right;
@@ -120,7 +120,7 @@ form input[type=submit]:after, form button[type=submit]:after {
 	font-size: 0.6em;
 }
 
-#intro {
+.intro {
 	display: block;
 	max-width: 480px;
 	margin: 20px auto;
@@ -128,5 +128,13 @@ form input[type=submit]:after, form button[type=submit]:after {
 	border: 1px solid #f8f8f8;
 	font-size: 0.7em;
 	font-weight: 200px;
-	padding: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.intro.sub {
+	border: 6px solid rgba(0,0,0,0.1);
+	background: #E2B842;
+	color: #fff;
 }
