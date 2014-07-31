@@ -36,7 +36,7 @@ $ python -m SimpleHTTPServer
 
 # <a name="forms"></a>HTML Forms
 
-> Proof-of-concept Example [to be updated with Codepen link]()
+> Proof-of-concept Example [Codepen link](http://codepen.io/kelvintaywl/full/JjdhC/)
 
 HTML forms are the glue to I/O between the user and the server, when we talk about web apps.
 How can we try to ensure form inputs are less painful?
