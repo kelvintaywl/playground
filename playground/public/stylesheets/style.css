@@ -49,20 +49,21 @@ select option {
 
 form > fieldset, fieldset {
 	padding: 5px;
-	margin: 5px;
 	width: 100%;
 	display: block;
 	border: 0 !important;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+form > fieldset:after {
+	clear: both;
 }
 
 form > fieldset > label {
 	display: inline-block;
 	float: left;
 	text-align: right;
-}
-
-form > fieldset > label:before {
-	clear: both;
 }
 
 form > fieldset > input, form > fieldset > select {
