@@ -14,25 +14,25 @@ Because User Happiness is not a myth.
 
 # <a name="get-started"></a>Get Started
 
-To view all examples in this project, simply run a simple web server from this project folder.
+To view all examples in this project,
+ 
+1. install node and npm if you have not. You can download at http://nodejs.org/download/
 
-## For Mac / Linux users, 
+2. clone this repository onto your local system
 
-1. clone this project into your local environment.
-
-2. from the terminal, get to the project folder
-
+3. cd into the project folder, and install all dependancies
 ```
-$ cd playground
-```
-
-3. You should have Python preinstalled. Great! Simply run the web server via Python:
-
-```
-$ python -m SimpleHTTPServer
+$ npm install
 ```
 
-4. By default, SimpleHTTPServer runs in port 8000. Point your browser to (http://localhost:8000)
+4. run the command below, and the server will be up and running.
+
+```
+$ npm start
+```
+
+5. point your browser to http://localhost:3000
+
 
 # <a name="forms"></a>HTML Forms
 
