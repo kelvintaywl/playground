@@ -36,7 +36,7 @@ $ npm start
 
 # <a name="forms"></a>HTML Forms
 
-> Proof-of-concept Example [Codepen link](http://codepen.io/kelvintaywl/full/JjdhC/)
+> [View Demo](http://user-happiness.herokuapp.com/)
 
 HTML forms are the glue to I/O between the user and the server, when we talk about web apps.
 How can we try to ensure form inputs are less painful?
