@@ -25,14 +25,23 @@ window.onload = function(){
     else if(window.ActiveXObject){
       httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
     };
+    var datalist = document.querySelector('#suggested_list');
     var url = "/pokemon/" + typed_input;
 
     httpRequest.onreadystatechange = function(){
       if(httpRequest.readyState === 4){
         if(httpRequest.status === 200){
-          var data = JSON.parse(httpRequest.responseText);
-          var pokemons = data.results;
-          console.log(pokemons);
+          var pokemons = JSON.parse(httpRequest.responseText).results;
+          if(pokemons.length > 0){
+            // update datalist
+            datalist.innerHTML = "";
+            for(var i = 0; i < pokemons.length; i++){
+              var option = document.createElement('option');
+              option.value = pokemons[i];
+              option.innerHTML = pokemons[i];
+              datalist.appendChild(option);
+            };
+          };
         };
       };
     };

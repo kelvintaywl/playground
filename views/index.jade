@@ -26,13 +26,13 @@ block content
 
   h2 Suggested Search Form
   span.intro.sub.
-    We can easily mimick a Google search input box with some clever AJAX requests and HTML '&lt;datalist&gt;' tags.<br><br>[Work in Progress]
+    We can easily mimick a Google search input box with some clever AJAX requests and HTML '&lt;datalist&gt;' tags.<br><br><b>&gt; <em>which, of course, can be written without our favourite friend, jQuery.</em></b>
 
   form
     fieldset
       label MY POKEMON
-      input(type='text', name='pokemon' list='choice-list')
-      datalist#choice-list
+      input(type='text', name='pokemon' list='suggested_list')
+      datalist#suggested_list
         option Bulbasaur
         option Ivysaur
         option Venusaur
