@@ -13,5 +13,33 @@ window.onload = function(){
     };
   };
 
+  var suggested_search_input = document.querySelector('input[name=pokemon]');
+  suggested_search_input.onkeydown = function(){
+    var typed_input = this.value;
+    if (typed_input.length <= 0) return;
+
+    var httpRequest;
+    if(window.XMLHttpRequest){
+      httpRequest = new XMLHttpRequest();
+    }
+    else if(window.ActiveXObject){
+      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    };
+    var url = "/pokemon/" + typed_input;
+
+    httpRequest.onreadystatechange = function(){
+      if(httpRequest.readyState === 4){
+        if(httpRequest.status === 200){
+          var data = JSON.parse(httpRequest.responseText);
+          var pokemons = data.results;
+          console.log(pokemons);
+        };
+      };
+    };
+
+    httpRequest.open('GET', url, true);
+    httpRequest.send(null)
+  };
+
 };
 
