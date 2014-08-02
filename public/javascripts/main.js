@@ -14,41 +14,53 @@ window.onload = function(){
   };
 
   var suggested_search_input = document.querySelector('input[name=pokemon]');
+  makeAJAX('/pokemon_all/', null, appendDataList);
+
+  /*
   suggested_search_input.onkeydown = function(){
     var typed_input = this.value;
-    if (typed_input.length <= 0) return;
-
-    var httpRequest;
-    if(window.XMLHttpRequest){
-      httpRequest = new XMLHttpRequest();
-    }
-    else if(window.ActiveXObject){
-      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-    };
-    var datalist = document.querySelector('#suggested_list');
-    var url = "/pokemon/" + typed_input;
-
-    httpRequest.onreadystatechange = function(){
-      if(httpRequest.readyState === 4){
-        if(httpRequest.status === 200){
-          var pokemons = JSON.parse(httpRequest.responseText).results;
-          if(pokemons.length > 0){
-            // update datalist
-            datalist.innerHTML = "";
-            for(var i = 0; i < pokemons.length; i++){
-              var option = document.createElement('option');
-              option.value = pokemons[i];
-              option.innerHTML = pokemons[i];
-              datalist.appendChild(option);
-            };
-          };
-        };
-      };
-    };
-
-    httpRequest.open('GET', url, true);
-    httpRequest.send(null)
+    makeAJAX("/pokemon/", typed_input, appendDataList);
   };
-
+  */
 };
 
+function makeAJAX(url, typed_input, callback){
+  if (Array.isArray(typed_input) && typed_input.length <= 0) return;
+
+  var httpRequest;
+  if(window.XMLHttpRequest){
+    httpRequest = new XMLHttpRequest();
+  }
+  else if(window.ActiveXObject){
+    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+  };
+  url = Array.isArray(typed_input)? url + typed_input : url;
+
+  httpRequest.onreadystatechange = function(){
+    if(httpRequest.readyState === 4){
+      if(httpRequest.status === 200){
+        var data = JSON.parse(httpRequest.responseText);
+        callback(data);
+      };
+    };
+  };
+  
+  httpRequest.open('GET', url, true);
+  httpRequest.send(null);
+};
+
+function appendDataList(data){
+  var datalist = document.querySelector('#suggested_list');
+  var pokemons = data.results;
+  console.log(pokemons.length);
+  if(pokemons.length > 0){
+    // update datalist
+    datalist.innerHTML = "";
+    for(var i = 0; i < pokemons.length; i++){
+      var option = document.createElement('option');
+      option.value = pokemons[i];
+      option.innerHTML = pokemons[i];
+      datalist.appendChild(option);
+    };
+  };
+};
